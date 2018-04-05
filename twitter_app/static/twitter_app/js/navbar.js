@@ -30,7 +30,7 @@ document.getElementById("nav_open_btn").onclick = function() {
 
   // #home-link
   document.getElementById('home-link').style.cssText = 'color:dimgray; font-we\
-  ight: bolder; display:block; font-size:25px; margin-bottom:20px !important;\
+  ight: bolder; display:block !important; font-size:25px; margin-bottom:20px !important;\
   width:100%; margin-top:110px!important;';
 
   // #profile-link
@@ -68,9 +68,9 @@ document.getElementById('nav_close_btn').onclick = function() {
   document.getElementById('nav_close_btn').style.cssText = 'display:none !imortant;';
 
   // #top_nav_bar
-  document.getElementById('top_nav_bar').style.cssText = 'overflow-y:hidden !important;\
+  document.getElementById('top-nav-bar').style.cssText = 'overflow-y:hidden !important;\
   width:100%; height:50px; position:fixed; padding:8px 90px 0px 90px !important;\
-  background-color:white; borderBottom: 1px solid lightgray; z-index:1;'
+  background-color:white; borderBottom: 1px solid lightgray; z-index:1; transition:0.5s !important;'
 
   // #logo
   logo.style.cssText = 'display:inline !important';
