@@ -44,3 +44,14 @@
   color: white;
   transition:0.5s;
 }
+
+@media only screen and (max-width:1000px) {
+  #settings-content {
+      height: 80vh;
+      width: 100%;
+      color: black;
+      margin: 0 auto !important;
+      margin-top: 80px !important;
+      padding: 20px !important;
+  }
+}
