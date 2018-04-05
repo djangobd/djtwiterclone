@@ -541,11 +541,11 @@ def home(request):
     all_settings = ProfileSettingsModel.objects.all()
     all_settings_count = all_settings.count()
 
-    random_settings_1 = all_settings[random.randint(0, all_settings_count-1)]
-    random_settings_2 = all_settings[random.randint(0, all_settings_count-1)]
-    random_settings_3 = all_settings[random.randint(0, all_settings_count-1)]
-    random_settings_4 = all_settings[random.randint(0, all_settings_count-1)]
-    random_settings_5 = all_settings[random.randint(0, all_settings_count-1)]
+    random_settings_1 = all_settings[random.randint(1, all_settings_count-1)]
+    random_settings_2 = all_settings[random.randint(1, all_settings_count-1)]
+    random_settings_3 = all_settings[random.randint(1, all_settings_count-1)]
+    random_settings_4 = all_settings[random.randint(1, all_settings_count-1)]
+    random_settings_5 = all_settings[random.randint(1, all_settings_count-1)]
 
     return render(request, 'home.html', context={'has_navbar': True,
                                                  'current_user': current_user,
@@ -644,6 +644,19 @@ def explore(request):
 #    see what results i get from the query. I hate it.
 # 6 - And lastly before i forget the tweet home feed needs ajax. to let the
 #    new tweets keep coming.
+# 7- The home page and the exlpre page will not work on the local host if the
+#    user does not create content. I am manually creating content at the beg
+#    beginig since we have random_settings queries they will break if there is
+#    nothing in the array for settings.
+# 8- I still dont know which sql to use and how to use it. For the sake of
+#    heroku i will go along with postgresql for now but i may change it.
+# 9- there is a scaling problem each time a user submit a tweet the site will
+#    become slower and slower. I couldnt find a soulition to that since this
+#    is my first django project and im a beginnerself.
+# 10- most of the algorithms such as , follow suggestions, explore page does
+#     not use any kind of sessions or algorithms they are coded very poorly
+#     which is not the best use for optimsiation problems that i will have in
+#     future ....
 
 # Yet, I am probably not going to use or waste my time on this project, at
 # least not for a long time because this was just a learning experience.
