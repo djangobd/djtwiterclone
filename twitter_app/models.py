@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 # USER SETTINGS MODEL FOR CHANGING THE PROFILE SETTINGS
 class ProfileSettingsModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='settings')
-    profile_photo = CloudinaryField('image')
+    profile_photo = CloudinaryField('image', null=True, blank=True)
     first_name = models.CharField(max_length=20, null=True, blank=True)
     bio = models.CharField(max_length=140, null=True, blank=True)
     location = models.CharField(max_length=30, null=True, blank=True)
