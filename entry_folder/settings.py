@@ -1,4 +1,5 @@
 import os
+import cloudinary
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'twitter_app',
+    'cloudinary',
 ]
+
+cloudinary.config(
+    cloud_name = 'hift1g2ql',
+    api_key = '669942266591368',
+    api_secret = '8GZtErG0KWqje3bUlplYfaqt8LU' ,
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -114,10 +122,6 @@ STATIC_URL = '/static/'
 
 # ---------------------
 # My additions to settings.
-
-# For our media that comes from the users such as the pps and etc.
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 LOGIN_REDIRECT_URL = 'profile'

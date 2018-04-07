@@ -1,13 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 # USER SETTINGS MODEL FOR CHANGING THE PROFILE SETTINGS
 class ProfileSettingsModel(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='settings')
-    profile_photo = models.ImageField(upload_to='media/profile_photos/',
-                                      default='media/profile_photos/1234567890_default.png',
-                                      null=True, blank=True)
+    profile_photo = CloudinaryField('image')
     first_name = models.CharField(max_length=20, null=True, blank=True)
     bio = models.CharField(max_length=140, null=True, blank=True)
     location = models.CharField(max_length=30, null=True, blank=True)
