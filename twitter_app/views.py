@@ -195,11 +195,12 @@ def profile_settings(request):
         if settings_form.is_valid():
             #settings_model.profile_photo = settings_form.cleaned_data['profile_photo']
             settings_model.profile_photo = cloudinary.uploader.upload_resource(settings_form.cleaned_data['profile_photo'])
-            #image_file = BytesIO(settings_model.profile_photo.read())
-            #image = Image.open(image_file)
-            #image = image.resize((230, 230))
-            #image_file = BytesIO()
-            #image.save(image_file, 'JPEG', quality=90)
+            image_file = BytesIO(settings_model.profile_photo.read())
+            image = Image.open(image_file)
+            image = image.resize((230, 230))
+            image_file = BytesIO()
+            image.save(image_file, 'JPEG', quality=90)
+            settings_model.profile_photo.file = image_file
             settings_model.first_name = settings_form['first_name'].value()
             settings_model.bio = settings_form['bio'].value()
             settings_model.location = settings_form['location'].value()
