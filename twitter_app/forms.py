@@ -1,4 +1,6 @@
 from django import forms
+from django.forms import ModelForm
+from .models import ProfileSettingsModel
 
 # Signup Form for registering users
 # -------------------------
@@ -40,7 +42,13 @@ class LoginForm(forms.Form):
 
 # Settings Form for changing profile settings
 # -------------------------
-class ProfileSettingsForm(forms.Form):
+class ProfileSettingsForm(ModelForm):
+
+    class Meta:
+        model = ProfileSettingsModel
+        fields = = ('profile_photo', 'first_name', 'bio', 'location', 'personal_link' )
+
+'''class ProfileSettingsForm(forms.Form):
     profile_photo = forms.ImageField(required=False,)
     first_name = forms.CharField(max_length=20, required=False,
                                  widget=forms.TextInput(attrs={'class': 'form-control',
@@ -62,7 +70,7 @@ class ProfileSettingsForm(forms.Form):
                                                                   'placeholder': 'eg. www,yourname.com',
                                                                   'id': 'form-personal-link-input',
                                                                   }))
-
+'''
 
 # TWeet form for adding tweets(entries)
 # -------------------------
