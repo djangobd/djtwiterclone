@@ -194,7 +194,7 @@ def profile_settings(request):
         settings_model = ProfileSettingsModel.objects.get(user=current_user)
         if settings_form.is_valid():
             #settings_model.profile_photo = settings_form.cleaned_data['profile_photo']
-            photo = settings_form.cleaned_data['profile_photo']
+            photo = settings_form.cleaned_data['profile_photo'].value()
             image_file = BytesIO(photo)
             image = Image.open(image_file)
             image = image.resize((230, 230))
