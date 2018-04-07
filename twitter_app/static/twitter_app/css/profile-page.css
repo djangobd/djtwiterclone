@@ -242,7 +242,8 @@ html body {
   }
 
   #tweet-left-part img {
-    height: 30px;
+    height: 30px !important;
+    width: 30px !important
   }
 
   #tweet-right-part {
