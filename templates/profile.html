@@ -53,7 +53,7 @@
     <!-- PP -->
     <div id="profile-picture" class="text-center">
       {%if current_user_settings.profile_photo%}
-      <img alt="profile_image" src=" {{ current_user_settings.profile_photo.url }}">
+      <img alt="profile_image" src=" {{ current_user_settings.profile_photo.url }}" height="230px" width="230px">
       {% else %}
       <img alt="profile_image_default" src=" {{ 1234567890_default.png }}">
       {% endif %}
