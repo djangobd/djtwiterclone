@@ -194,7 +194,7 @@ def profile_settings(request):
         settings_model = ProfileSettingsModel.objects.get(user=current_user)
         if settings_form.is_valid():
             #settings_model.profile_photo = settings_form.cleaned_data['profile_photo']
-            settings_model.profile_photo = cloudinary.uploader.upload(settings_form.cleaned_data['profile_photo'])
+            settings_model.profile_photo = cloudinary.uploader.upload_resource(settings_form.cleaned_data['profile_photo'])
             #image_file = BytesIO(settings_model.profile_photo.read())
             #image = Image.open(image_file)
             #image = image.resize((230, 230))
