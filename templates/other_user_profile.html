@@ -21,7 +21,7 @@
   <br />
   <!-- user cells generated from the search keyword -->
   <div id="search_user_cell">
-    <img src="{{ filtered_db_user_settings.profile_photo.url }}" alt="pp" height="50px" style="border-radius:50%;"/>
+    <img src="{{ filtered_db_user_settings.profile_photo.url }}" alt="pp" height="50px" width="50px" style="border-radius:50%;"/>
     {%  if not filtered_db_user.username %}
       <a href=""><h4>@{{ filtered_db_user }}</h4></a>
     {% else %}
@@ -47,9 +47,9 @@
     <!-- PP -->
     <div id="profile-picture" class="text-center">
       {%if other_user_settings.profile_photo %}
-        <img alt="profile_image" src=" {{ other_user_settings.profile_photo.url }}">
+        <img alt="profile_image" src=" {{ other_user_settings.profile_photo.url }}" width="230px" height="230px">
       {% else %}
-        <img alt="profile_image_default" src=" {{ 1234567890_default.png }}">
+        <img alt="profile_image_default" src=" {{ 1234567890_default.png }}" width="230px" height="230px">
       {% endif %}
     </div>
 
@@ -98,7 +98,7 @@
         <div id="suggestion-profile">
           <div class="row">
             <div class="col-xs-3">
-              <img alt="suggestion_img" src="{{ following_settings.profile_photo.url }}">
+              <img alt="suggestion_img" src="{{ following_settings.profile_photo.url }}" height="52px" width="52px">
             </div>
             <div class="col-xs-9" id="suggestion-profile-info">
               <a href="{% url 'other_user_profile' following.followed %}">{{ following_settings.first_name }}</a>
@@ -156,9 +156,9 @@
           <div class="row">
             <div class="col-xs-1 text-center" id="tweet-left-part">
               {%if other_user_settings.profile_photo %}
-                <img alt="profile_image" src=" {{ other_user_settings.profile_photo.url }}">
+                <img alt="profile_image" src=" {{ other_user_settings.profile_photo.url }}" height="52px" width="52px">
               {% else %}
-                <img alt="profile_image_default" src=" {{ 1234567890_default.png }}">
+                <img alt="profile_image_default" src=" {{ 1234567890_default.png }}" height="52px" width="52px">
               {% endif %}
             </div><!-- /tweet-left-part -->
             <div class="col-xs-11" id="tweet-right-part">
@@ -209,7 +209,7 @@
     <div id="retweet">
       <div class="row">
         <div class="col-xs-1 text-center" id="tweet-left-part">
-          <img alt="pp_img" src="{{ retweet.retweet_settings.profile_photo.url }}">
+          <img alt="pp_img" src="{{ retweet.retweet_settings.profile_photo.url }}" height="52px" width="52px">
         </div>
         <div class="col-xs-11" id="tweet-right-part">
           <p id="retweet-p"><i class="fa fa-retweet"></i> {{ other_user.username }} retweeted</p>
